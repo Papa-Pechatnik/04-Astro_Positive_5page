@@ -1,0 +1,55 @@
+@import url("./normalize.css");
+
+:root {
+    /*primary - головний        */
+    /*secondary - другорядний   */
+    /*tertiary - третинний      */
+    /*subsidiary- додатковий    */
+    /*accent - акцентний        */
+    /*hover -                   */
+    /*success - успіх           */
+    /*error - помилка           */
+    /*info -                    */
+    /*wsrning - помилка         */
+
+    --color1: #000; /*black */
+    --color2: #191a23; /*dark */
+    --color3: #b9ff66; /*green*/
+    --color4: #f3f3f3; /*grey*/
+    --color5: #ffffff; /*white*/
+
+    /**text */
+    --text-color-primary: #191a23; /*dark */
+    --text-color-secondary: #ffffff;  /*white*/
+
+    /**font */
+    --font-family: 'Space Grotesk Variable', sans-serif;
+
+    /**background*/
+    --bg-primary: #ffffff; /*white*/
+    --bg-secondary: #191a23; /*dark */
+    --bg-tertiary: #f3f3f3; /*grey*/
+    --bg-subsidiary: #b9ff66; /*green*/
+
+    /** hover */
+
+    
+
+    /** container */
+    --container-width: 1440px;
+    --container-padding: 28px; /*1440 - 100 567 - 20*/
+
+
+}
+
+.container {
+    margin-inline: auto;
+    max-width: var(--width-container);
+    width: 100%;
+    padding: 0 var(--pad-container);
+    
+}
+
+@media screen and (max-width: 567px) {
+
+}
