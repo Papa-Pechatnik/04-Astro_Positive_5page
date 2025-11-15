@@ -1,12 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import HeroBase from '../components/HeroBase.astro';
+import ImpactNumbers from '../components/section/about/ImpactNumbers.astro';
+import Journey  from '../components/section/about/Journey.astro';
+import CoreValues from '../components/section/about/CoreValues.astro';
+import Awards  from '../components/section/about/Awards.astro';
 
 const page = "About Us";
+
+const headingH2 = [
+  {
+    id: 1,
+    sectionName: "numbers",
+    title: "Our Impact in Numbers",
+    subtitle:
+      "A snapshot of the milestones and achievements that drive our success",
+  },
+  {
+    id: 2,
+    sectionName: "journey",
+    title: "Our Journey",
+    subtitle: "From humble beginnings to industry leaders, discover how Positivus evolved to drive success for businesses worldwide.",
+  },
+  {
+    id: 3,
+    sectionName: "values",
+    title: "Core Values",
+    subtitle: "At the heart of everything we do are our core values:",
+  },
+  {
+    id: 4,
+    sectionName: "awards",
+    title: "Awards & Recognition",
+    subtitle: "At Positivus, our commitment to excellence has been recognized by industry leaders. Here are some of our proudest achievements:",
+  },
+  
+  ];
 ---
 
 <Layout titlePage={page}>
-<p>About Us</p>
+  <HeroBase />
+  <ImpactNumbers {...headingH2[0]} />
+  <Journey {...headingH2[1]} />
+  <CoreValues {...headingH2[2]} />
+  <Awards {...headingH2[3]} />
 </Layout>
 
 <style>

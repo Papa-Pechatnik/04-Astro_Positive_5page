@@ -1,15 +1,11 @@
 ---
-import Section from "../../blocks/Section.astro";
+import Section from "../../section/Section.astro";
+import type { SectionProps } from "../../../types/SectionProps.ts";
+interface Props extends SectionProps {};
 
-interface Props {
-  title: string;
-  subtitle: string;
-  sectionName: string;
-}
-
-const {title, subtitle, sectionName } = Astro.props;
+const props = Astro.props;
 ---
 
-<Section {...Astro.props}>
+<Section {...props}>
   <!-- КОНТЕНТ СЕКЦІЇ -->
 </Section>
