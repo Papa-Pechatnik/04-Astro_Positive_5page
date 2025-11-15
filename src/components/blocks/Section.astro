@@ -1,0 +1,20 @@
+---
+import HeadingH2 from "../blocks/HeadingH2.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  sectionName: string;
+}
+
+const { title, subtitle, sectionName } = Astro.props;
+---
+<section class:list={[`section-${sectionName}`, 'section section--margin-top']}>
+    <div class="container">
+        <HeadingH2 {title} {subtitle}/>
+        <div class="section-box section-box--margin-top">
+            <slot/>
+        </div>
+    </div>
+</section>
+

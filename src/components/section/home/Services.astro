@@ -1,0 +1,15 @@
+---
+import Section from "../../blocks/Section.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  sectionName: string;
+}
+
+const {title, subtitle, sectionName } = Astro.props;
+---
+
+<Section {...Astro.props}>
+  <!-- КОНТЕНТ СЕКЦІЇ -->
+</Section>

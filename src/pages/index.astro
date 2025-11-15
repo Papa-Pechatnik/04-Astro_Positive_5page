@@ -1,14 +1,64 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/section/home/Hero.astro";
+import Services from "../components/section/home/Services.astro";
+import CaseStudies from "../components/section/home/CaseStudies.astro";
+import WorkingProcess from "../components/section/home/WorkingProcess.astro";
+import Testimonials from "../components/section/home/Testimonials.astro";
+import Team from "../components/section/home/Team.astro";
+import ContactUs from "../components/section/home/ContactUs.astro";
 
 const page = "Home";
+
+const headingH2 = [
+  {
+    id: 1,
+    sectionName: "services",
+    title: "services",
+    subtitle:
+      "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:",
+  },
+  {
+    id: 2,
+    sectionName: "studies",
+    title: "Case Studies",
+    subtitle: "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+  },
+    {
+    id: 3,
+    sectionName: "working",
+    title: "Our Working Process ",
+    subtitle: "Step-by-Step Guide to Achieving Your Business Goals",
+  },
+    {
+    id: 4,
+    sectionName: "team",
+    title: "Team",
+    subtitle: "Meet the skilled and experienced team behind our successful digital marketing strategies",
+  },
+      {
+    id: 5,
+    sectionName: "testimonials",
+    title: "Testimonials",
+    subtitle: "Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services",
+  },
+        {
+    id: 5,
+    sectionName: "contact",
+    title: "Contact Us",
+    subtitle: "Connect with Us: Let's Discuss Your Digital Marketing Needs",
+  },
+];
 ---
 
-<Layout title = {page}>
-<p></p>
+<Layout titlePage={page}>
+    <Hero/>
+  <Services {...headingH2[0]}/>
+  <CaseStudies {...headingH2[1]} />
+  <WorkingProcess {...headingH2[2]} />
+  <Team {...headingH2[3]} />
+  <Testimonials {...headingH2[4]} />
+  <ContactUs {...headingH2[5]} />
 </Layout>
 
-<style>
-
-</style>
+<style></style>

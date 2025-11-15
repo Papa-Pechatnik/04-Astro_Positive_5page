@@ -12,18 +12,24 @@
     /*info -                    */
     /*wsrning - помилка         */
 
-    --color1: #000; /*black */
+    --color1: #000000; /*black */
     --color2: #191a23; /*dark */
     --color3: #b9ff66; /*green*/
     --color4: #f3f3f3; /*grey*/
     --color5: #ffffff; /*white*/
 
-    /**text */
+    /**text     ---- color*/
     --text-color-primary: #191a23; /*dark */
-    --text-color-secondary: #ffffff;  /*white*/
+    --text-color-secondary: #ffffff; /*white*/
+
+    --title-color-primary: #000000; /*black */
+
+    /**text     ---- line-height */
+
+    --line-h150: 1.5;
 
     /**font */
-    --font-family: 'Space Grotesk Variable', sans-serif;
+    --font-family: "Space Grotesk Variable", sans-serif;
 
     /**background*/
     --bg-primary: #ffffff; /*white*/
@@ -33,23 +39,69 @@
 
     /** hover */
 
-    
-
     /** container */
     --container-width: 1440px;
-    --container-padding: 28px; /*1440 - 100 567 - 20*/
-
-
+    --container-padding: clamp(1.25rem, -1.997rem + 9.164vw, 6.25rem); /*1440 - 100 567 - 20*/
 }
 
+/** container & section */
 .container {
     margin-inline: auto;
-    max-width: var(--width-container);
+    max-width: var(--container-width);
     width: 100%;
-    padding: 0 var(--pad-container);
+    padding: 0 var(--container-padding);
+}
+
+.section {
+    background-color: cornsilk;
+}
+
+.section--margin-top {
+    /** 1280 - 140px 576 - 60px */
+    margin-top: clamp(3.75rem, -0.341rem + 11.364vw, 8.75rem);
+}
+
+.section-box--margin-top {
+    /** 1280 - 80px 576 - 30px */
+    margin-top: clamp(1.875rem, -0.682rem + 7.102vw, 5rem);
+}
+
+/** text */
+.h2-heading {
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    column-gap: 2.5rem;
+    row-gap: 1.875rem;
+    color: var(--title-color-primary);
     
 }
 
-@media screen and (max-width: 567px) {
+.h2-title {
+    /** 1024 - 40px 576 - 36 px */
+    --font-size: clamp(2.25rem, 1.929rem + 0.893vw, 2.5rem);
+    --line-h1275: 1.275;
+    font-weight: 500;
+    font-size: var(--font-size);
+    height: calc(var(--line-h1275) * var(--font-size));
 
+    padding-inline: 0.4375rem;
+    background-color: var(--bg-subsidiary);
+    border-radius: 0.875rem;
+    text-transform: capitalize;
+    text-wrap: nowrap;
+}
+
+.h2-subtitle {
+    text-wrap: balance;
+}
+
+@media screen and (max-width: 767px) {
+    .h2-heading {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
 }
