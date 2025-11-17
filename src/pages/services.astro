@@ -1,12 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import HeroBase from '../components/HeroBase.astro';
+import SEOProcess from "../components/section/services/SEOProcess.astro";
+import Cases from "../components/section/services/Cases.astro";
+import Service from "../components/section/Services.astro";
+import heroImage from '../assets/images/services-hero.svg';
 
 const page = "Services";
+
+const hero = {
+    title: "Expert Digital Marketing Services",
+    subtitle: "Unlock your business's full potential with tailored strategies designed to drive growth and deliver results.",
+    imgSrc: heroImage,
+}
+
+const headingH2 = [
+  {
+    id: 1,
+    sectionName: "seo",
+    title: "How We Work: SEO Process",
+    subtitle:
+      "A snapshot of the milestones and achievements that drive our success",
+  },
+  {
+    id: 2,
+    sectionName: "cases",
+    title: "Use Cases",
+    subtitle: "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+  },
+  {
+    id: 3,
+    sectionName: "services",
+    title: "Our Other Services",
+    subtitle: "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:",
+  },
+  ];
 ---
 
 <Layout titlePage={page}>
-<p>Services</p>
+  <HeroBase {...hero} />
+  <SEOProcess {...headingH2[0]} />
+  <Cases {...headingH2[1]} />
+  <Service {...headingH2[2]} />
 </Layout>
 
 <style>

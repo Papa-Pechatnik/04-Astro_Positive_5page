@@ -48,6 +48,8 @@
     /** container */
     --container-width: 1440px;
     --container-padding: clamp(1.25rem, -1.997rem + 9.164vw, 6.25rem); /*1440 - 100 567 - 20*/
+
+    --gap-32: 2rem;
 }
 
 /** container & section */
@@ -85,10 +87,9 @@
     font-size: var(--text-h2);
     color: var(--title-color-primary);
     line-height: var(--line-h140);
-    text-wrap: balance;
 }
 .h2-heading {
-    max-width: 992px;
+    max-width: 62rem;
     display: flex;
     align-items: center;
     column-gap: 2.5rem;
