@@ -5,8 +5,15 @@ import ImpactNumbers from '../components/section/about/ImpactNumbers.astro';
 import Journey  from '../components/section/about/Journey.astro';
 import CoreValues from '../components/section/about/CoreValues.astro';
 import Awards  from '../components/section/about/Awards.astro';
+import aboutHeroImage from '../assets/images/about-hero.svg';
 
 const page = "About Us";
+
+const hero = {
+    title: "Together for Success",
+    subtitle: "At Positivus, we help businesses grow by combining creativity, innovation, and data-driven strategies. Together, we build a future of shared success.",
+    imgSrc: aboutHeroImage,
+}
 
 const headingH2 = [
   {
@@ -20,7 +27,7 @@ const headingH2 = [
     id: 2,
     sectionName: "journey",
     title: "Our Journey",
-    subtitle: "From humble beginnings to industry leaders, discover how Positivus evolved to drive success for businesses worldwide.",
+    subtitle: "From humble beginnings to industry leaders, discover how Positivus has evolved to drive success for businesses worldwide.",
   },
   {
     id: 3,
@@ -39,7 +46,7 @@ const headingH2 = [
 ---
 
 <Layout titlePage={page}>
-  <HeroBase />
+  <HeroBase {...hero} />
   <ImpactNumbers {...headingH2[0]} />
   <Journey {...headingH2[1]} />
   <CoreValues {...headingH2[2]} />
