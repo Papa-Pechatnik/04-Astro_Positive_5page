@@ -1,0 +1,89 @@
+---
+// componets FreeProposal
+import PictureIdeas from "../elements/PictureIdeas.astro";
+import BtnProposal from "../elements/BtnProposal.astro";
+
+interface Props {
+  color?: boolean; // Очікуємо необов'язкову властивість 'color'
+}
+
+const {
+  color = false, // за замовчуванням false
+} = Astro.props as Props;
+
+// Обчислюємо кінцевий рядок кольору на основі булевого значення
+const finalColor = color ? "green" : "white";
+---
+
+<section class:list={["proposal box-shadow", `proposal--${finalColor}`]}>
+  <div class="proposal-content">
+    <h3 class="h3-title">Let's Create Your Next Success Story</h3>
+    <p class="h4-text">
+      Contact us today to learn more about how our digital marketing services can help your business grow and succeed
+      online.
+    </p>
+    <BtnProposal />
+  </div>
+  <div class="proposal-img">
+    <PictureIdeas color={finalColor} />
+  </div>
+</section>
+<style>
+  .h4-text {
+    max-width: 500px;
+  }
+  .proposal {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding60-30);
+    gap: var(--gap-26-20);
+  }
+
+  .proposal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-26-20);
+  }
+  .proposal-img {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .proposal--white {
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .proposal--green {
+    background-color: var(--bg-subsidiary);
+    border-radius: 45px;
+  }
+  .proposal.proposal--green {
+    margin-top: var(--padding124-60);
+  }
+
+  @media screen and (max-width: 767px) {
+    .proposal {
+      flex-direction: column;
+    }
+
+    .proposal-content {
+      align-items: center;
+      text-align: center;
+    }
+    .proposal-img {
+      min-height: 400px;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .proposal-img {
+      min-height: 100vw;
+    }
+  }
+</style>

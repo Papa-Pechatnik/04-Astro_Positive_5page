@@ -1,0 +1,28 @@
+---
+const link = "/pricing";
+---
+
+<a href={link}>Get your free proposal</a>
+
+<style>
+  a {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: var(--line-h140);
+    text-align: center;
+    color: var(--text-color-secondary);
+
+    border-radius: 0.875rem;
+    padding: 1.25rem 2.1875rem;
+    background-color: var(--btn-primary);
+    width: fit-content;
+    transition: all 0.7s;
+  }
+
+  a:hover {
+    color: var(--text-color-primary);
+    background-color: var(--btn-hover-primary);
+    box-shadow: var(--box-shadow);
+  }
+</style>

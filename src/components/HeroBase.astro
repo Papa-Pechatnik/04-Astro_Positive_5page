@@ -28,7 +28,7 @@ const { title, subtitle, imgSrc } = Astro.props;
 <style>
   .hero-wrap {
     border-radius: 2.25rem;
-    padding: clamp(1.875rem, -5.625rem + 11.719vw, 3.75rem); /*1280 - 60 1024 - 30*/
+    padding: var(--padding60-30);
     background-color: var(--bg-tertiary);
   }
   .hero-content {

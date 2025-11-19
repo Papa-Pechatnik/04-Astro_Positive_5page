@@ -1,20 +1,15 @@
 ---
+// componets Section
 import HeadingH2 from "../blocks/HeadingH2.astro";
-
-interface Props {
-  title: string;
-  subtitle: string;
-  sectionName: string;
-}
+import type { SectionProps } from "../../types/SectionProps.ts";
+interface Props extends SectionProps {}
 
 const { title, subtitle, sectionName } = Astro.props;
 ---
-<section class:list={[`section-${sectionName}`, 'section section--margin-top']}>
+<section class:list={[`section-${sectionName}`]}>
     <div class="container">
         <HeadingH2 {title} {subtitle}/>
-        <div class="section-box section-box--margin-top">
-            <slot/>
-        </div>
+        <slot/>
     </div>
 </section>
 

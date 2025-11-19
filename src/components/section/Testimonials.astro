@@ -1,0 +1,36 @@
+---
+// componets Testimonials
+import Section from "../section/Section.astro";
+import Slider from "../blocks/Slider.astro";
+import FreeProposal from "../blocks/FreeProposal.astro";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  sectionName?: string;
+  showProposalBlock?: boolean; // false - по умолчанию, true - включает FreeProposal
+  color?: boolean; // false - за замовчування white
+}
+const {
+  title = "Testimonials",
+  subtitle = "Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services",
+  sectionName = "testimonials",
+  showProposalBlock = false,
+  color,
+} = Astro.props as Props;
+
+const props = {
+  title,
+  subtitle,
+  sectionName,
+};
+
+
+---
+
+<Section {...props}>
+  <div class="section-box">
+  <Slider />
+  {showProposalBlock && <FreeProposal {color}/>}    
+  </div>
+</Section>

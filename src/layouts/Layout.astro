@@ -24,7 +24,7 @@ const author = "Web developer by Sopun Yuriy";
   </head>
   <body>
     <Headers />
-    <main>
+    <main class="main flex-column">
       <slot />
     </main>
     <Footer />
@@ -44,5 +44,10 @@ const author = "Web developer by Sopun Yuriy";
     font-style: normal;
     line-height: normal;
     
+  }
+
+  .main {
+    /** 1280 - 140px 576 - 60px */
+    row-gap: clamp(3.75rem, -0.341rem + 11.364vw, 8.75rem);
   }
 </style>
