@@ -1,0 +1,15 @@
+---
+import Section from "../Section.astro";
+import ServicesSection from "../ServicesSection.astro";
+
+import type { SectionProps } from "../../../types/SectionProps.ts";
+
+interface Props extends SectionProps {};
+
+const props = Astro.props;
+---
+
+<Section {...props}>
+    <ServicesSection {...props}/>
+  <!-- КОНТЕНТ СЕКЦІЇ -->
+</Section>

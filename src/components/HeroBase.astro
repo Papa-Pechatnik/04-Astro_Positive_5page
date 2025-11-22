@@ -17,7 +17,7 @@ const { title, subtitle, imgSrc } = Astro.props;
       <div class="hero-content">
         <h1 class="hero-title h1-title">{title}</h1>
         <p class="hero-subtitle h1-subtitle">{subtitle}</p>
-        <div class="hero-image">
+        <div class="hero-image flex-column-center">
           <Image class="hero-image__img" src={imgSrc} alt="hero-image" />
         </div>
       </div>
@@ -32,11 +32,12 @@ const { title, subtitle, imgSrc } = Astro.props;
     background-color: var(--bg-tertiary);
   }
   .hero-content {
-    display: grid;
+     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
     justify-content: space-between;
     gap: var(--gap-32);
+    
   }
 
   .hero-title {
@@ -48,19 +49,17 @@ const { title, subtitle, imgSrc } = Astro.props;
 
   .hero-image {
     grid-area: 1 / 1 / 3 / 2;
-    max-width: 32.875rem;
+    
     width: 100%;
     height: 100%;
-    aspect-ratio: 525/485;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  
   }
 
   .hero-image__img {
+    max-width: 32.875rem;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 525/485;
+    height: auto;
   }
 
   .hero-title,
@@ -72,10 +71,10 @@ const { title, subtitle, imgSrc } = Astro.props;
   @media screen and (max-width: 767px) {
     .hero-content {
       grid-template-columns: 1fr;
-      grid-template-rows: auto;
+      grid-template-rows: repeat(3, auto);
 
       border-radius: 0;
-      background-color: transparent;
+      
     }
     .hero-title {
       grid-area: 1 / 1 / 2 / 2;
@@ -88,4 +87,11 @@ const { title, subtitle, imgSrc } = Astro.props;
       grid-area: 2 / 1 / 3 / 2;
     }
   }
+@media screen and (max-width: 430px) {
+    .hero-wrap {
+    background-color: transparent;
+    padding: 0;
+    }
+}
+
 </style>

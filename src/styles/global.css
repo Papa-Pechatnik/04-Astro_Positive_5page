@@ -59,11 +59,14 @@
 
     --gap-32: 2rem;
     --gap-26-20: clamp(1.25rem, 0.689rem + 1.17vw, 1.625rem); /*1280 - 26 767 - 20*/
+    --gap-40-30: clamp(1.875rem, 0.941rem + 1.949vw, 2.5rem); /*1280 - 40 767 - 30*/
+    --gap-100-60: clamp(3.75rem, 1.705rem + 5.682vw, 6.25rem); /*1280 - 100 567 - 60*/
 
     --padding60-30: clamp(1.875rem, -5.625rem + 11.719vw, 3.75rem); /*1280 - 60 1024 - 30*/
+    --padding50-30: clamp(1.875rem, -2.431rem + 6.944vw, 3.125rem); /*1280 - 50 992 - 30*/
     --padding60-50: clamp(3.125rem, 2.614rem + 1.42vw, 3.75rem); /*1280 - 60 1024 - 50*/
     --padding140-90: clamp(5.625rem, 3.068rem + 7.102vw, 8.75rem); /*1280 - 140 567 - 90*/
-    --padding124-60: clamp(3.75rem, 0.477rem + 9.091vw, 7.75rem) /*1280 - 124 567 - 60*/
+    
 }
 
 /** container & section */
@@ -78,6 +81,19 @@
     display: flex;
     flex-direction: column;
 }
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-100-60);
+  }
 
 /** text */
 .h1-title {
@@ -141,6 +157,47 @@
     box-shadow: var(--box-shadow);
 }
 
+@keyframes snowflake {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-up-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.icon-service {
+    max-width: 210px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.icon-service__snowflake-1 {
+    transform-origin: 77px 15px;
+    animation: snowflake 6s linear infinite; /* Имя, длительность, тип, повтор */
+}
+.icon-service__snowflake-2 {
+    transform-origin: 191px 57px;
+    animation: snowflake 4s linear infinite; /* Имя, длительность, тип, повтор */
+}
+
+.icon-service__glass {
+    transform-origin: 113px 52px;
+    animation: float-up-down 4s ease-in-out infinite alternate;
+}
+
+
 @media screen and (max-width: 992px) {
     .h2-heading {
         flex-direction: column;
@@ -162,3 +219,4 @@
         text-wrap: wrap;
     }
 }
+

@@ -1,0 +1,20 @@
+---
+import Section from "../Section.astro";
+import FreeProposal from "../../blocks/FreeProposal.astro";
+import ServicesSection from "../ServicesSection.astro";
+
+import type { SectionProps } from "../../../types/SectionProps";
+
+interface Props extends SectionProps {}
+
+const props = Astro.props;
+---
+
+<Section {...props}>
+  <div class="section-box">
+    <ServicesSection {...props}/>
+    <FreeProposal />
+  </div>
+</Section>
+
+

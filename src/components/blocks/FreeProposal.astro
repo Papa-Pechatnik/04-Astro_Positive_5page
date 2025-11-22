@@ -15,7 +15,7 @@ const {
 const finalColor = color ? "green" : "white";
 ---
 
-<section class:list={["proposal box-shadow", `proposal--${finalColor}`]}>
+<section class:list={["proposal", `proposal--${finalColor}`]}>
   <div class="proposal-content">
     <h3 class="h3-title">Let's Create Your Next Success Story</h3>
     <p class="h4-text">
@@ -62,10 +62,9 @@ const finalColor = color ? "green" : "white";
   .proposal--green {
     background-color: var(--bg-subsidiary);
     border-radius: 45px;
+    box-shadow: var(--box-shadow);
   }
-  .proposal.proposal--green {
-    margin-top: var(--padding124-60);
-  }
+
 
   @media screen and (max-width: 767px) {
     .proposal {
@@ -75,6 +74,9 @@ const finalColor = color ? "green" : "white";
     .proposal-content {
       align-items: center;
       text-align: center;
+    }
+    .proposal--white .proposal-img {
+      display: none;
     }
     .proposal-img {
       min-height: 400px;
